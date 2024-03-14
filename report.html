@@ -1,0 +1,73 @@
+<!DOCTYPE html> <html> 
+    <head> 
+        <title>Report Page</title>
+         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+        <style>
+         body {
+             background-color: #b0e0e6; 
+            }
+         h1 { text-align: center; margin-top: 50px;
+          
+          }
+           table 
+           { width: 50%; 
+           margin-left: auto; 
+           margin-right: auto; 
+           border-collapse: collapse; 
+           } 
+           th, td 
+           { 
+            border: 1px solid black; 
+            padding: 15px; 
+            text-align: left; 
+        } 
+        th 
+        { background-color: #4CAF50; 
+        color: white; 
+        } 
+        .pie-chart { 
+            width: 50%; 
+            margin-left: auto; 
+            margin-right: auto; 
+            margin-top: 50px; } 
+            </style> 
+            </head> 
+            <body> 
+                <h1>Report for Central Park</h1> 
+                <table> 
+                    <thead> 
+                        <tr> 
+                            <th>Complaints Registered</th> 
+                            <th>Complaints Solved</th> 
+                            <th>Average Humidity</th> 
+                            <th>Average Temperature</th> 
+                        </tr> 
+                    </thead> 
+                    <tbody> 
+                        <tr> 
+                            <td>10</td> 
+                            <td>8</td> 
+                            <td>60%</td> 
+                            <td>75°F</td> 
+                        </tr> 
+                    </tbody> 
+                </table> 
+                <div class="pie-chart"> 
+                    <canvas id="humidity-chart">
+
+                    </canvas> 
+                </div> 
+                <script> 
+                var ctx = document.getElementById('humidity-chart').getContext('2d'); 
+                var humidityChart = new Chart(ctx, { type: 'pie', data: { labels: ['Low Humidity', 'Medium Humidity', 'High Humidity'], 
+                datasets: [{ label: 'Humidity Level', data: [30, 40, 30], backgroundColor: [ 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)' ], 
+                borderColor: [ 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)' ], 
+                borderWidth: 1 }] }, 
+                options: { scales: { y: { beginAtZero: true } 
+                } 
+                } 
+                }
+                ); 
+                </script> 
+                </body> 
+                </html>
